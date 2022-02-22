@@ -1,0 +1,93 @@
+html {
+	/* Grey color pattern for webpage design. */
+	--grey-1000: #24292E;
+	--grey-900: #383F45;
+	--grey-800: #454C52;
+	--grey-700: #596066;
+	--grey-600: #676E76;
+	--grey-500: #7F8790;
+	--grey-400: #9EA5AD;
+	--grey-300: #CED2D6;
+	--grey-200: #E5E7EA;
+	--grey-100: #F6F7F9;
+
+	/* General font settings for the webpage. */
+	font-family: 'Open Sans';
+	font-size: 16px;
+
+	/* General color settings for the webpage. */
+	color: var(--grey-100);
+	background-color: var(--grey-800);
+}
+
+/* Design of the login box. */
+.login_box {
+	/* Place the login box in the middle of the screen. */
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+
+	/* Gives the box a thin border. */
+	border: 2px solid var(--grey-500);
+	border-radius: 16px;
+
+	/* Size of the box. */
+	width: 500px;
+	height: 250px;
+
+	/* Align text in the middle of the box. */
+	text-align: center;
+}
+
+/* Design of input fields on the login page. */
+.input_field {
+	/* Color settings for the input field. */
+	background-color: var(--grey-1000);
+	color: var(--grey-100);
+
+	/* Remove the default border settings. */
+	border: 0px;
+
+	/* Size settings for the input field. */
+	line-height: 24px;
+	margin-bottom: 10px;
+
+	/* Special font settings. */
+	font-size: 16px;
+}
+
+/* Design of the join button on login page. */
+.join_button {
+	/* Color settings for the button. */
+	background-color: var(--grey-800);
+	color: var(--grey-100);
+
+	/* Gives the button a thin border. */
+	border: 2px solid var(--grey-500);
+
+	/* Size settings for the button. */
+	height: 35px;
+	width: 100px;
+}
+
+/* Design of the join button on login page when hovered over. */
+.join_button:hover {
+	/* Color settings for the button. */
+	background-color: var(--grey-900);
+	color: var(--grey-100);
+
+	/* Gives the button a thin border. */
+	border: 2px solid var(--grey-500);
+
+	/* Size settings for the button. */
+	height: 35px;
+	width: 100px;
+}
+
+/* Design of users profile pictures. */
+.profile_picture {
+	/* Size settings. */
+	width: 50px;
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,300" rel="stylesheet" type="text/css">
+		
+		<link href="/static/style.css" rel="stylesheet">
+
+		<title>Flask Chat App</title>	
+	</head>
+
+	<body>
+		<div class="login_box">
+			<h1>Join a new Group</h1>
+
+			<form action="/chat">
+				<div>
+					<label>Username</label>
+				</div>
+
+				<div>
+					<label>
+						<input class="input_field" type="text" name="username">
+					</label>
+				</div>
+
+				<div>
+					<label>Group ID</label>
+				</div>
+
+				<div>
+					<label>
+						<input class="input_field" type="text" name="room">
+					</label>
+				</div>
+
+				<button class="join_button" type="submit"><b>Join</b></button>
+			</form>
+		</div>
+	</body>
+</html>
