@@ -31,12 +31,6 @@
         </div>
 
         <div id="messages"></div>
-
-        <form id="message_input_form">
-            <label>
-                <input type="text" id="message_input" placeholder="Enter message here">
-            </label>
-        </form>
     </body>
 
     <script src="https://cdn.socket.io/3.1.3/socket.io.min.js"></script>
@@ -53,23 +47,27 @@
                 room: "{{ room }}"
             })
 
+            // ####################################################
+            // WHOLE MESSAGE INPUT IS NOT NEEDED FOR SPECTATOR MODE
+            // ####################################################
+
             // Handles user typing in a message in the html ínput field.
-            let message_input = document.getElementById('message_input');
+            //let message_input = document.getElementById('message_input');
             
             // Handles what happens when user submits message.
-            document.getElementById('message_input_form').onsubmit = function (e) {
-                e.preventDefault();
-                let message = message_input.value.trim();
-                if (message.length) {
-                    socket.emit('send_message', {
-                        username: "{{ username }}",
-                        room: "{{ room }}",
-                        message: message
-                    })
-                }
-                message_input.value = '';
-                message_input.focus();
-            }
+            //document.getElementById('message_input_form').onsubmit = function (e) {
+            //    e.preventDefault();
+            //    let message = message_input.value.trim();
+            //    if (message.length) {
+            //        socket.emit('send_message', {
+            //            username: "{{ username }}",
+            //            room: "{{ room }}",
+            //            message: message
+            //        })
+            //    }
+            //    message_input.value = '';
+            //    message_input.focus();
+            //}
 
         })
 

@@ -6,7 +6,7 @@ A simple chat app built with Flask and SocketIO.
 - [ ] Build UI
 
 ## 01.03. To-Do List
-- [ ] Build spectator mode
+- [x] Build spectator mode
 - [ ] Build special person mode
 
 ## Setting Up the Project

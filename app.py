@@ -26,20 +26,33 @@ def chat():
     username = request.args.get('username')
     room = request.args.get('room')
 
-    # Adds new username to users list.
-    USER_LIST.append(username)
-    print(USER_LIST)
+    # Only add new user to the list if it is not a spectator.
+    if username == "spectator":
+        pass
+    else:
+        # Adds new username to users list.
+        USER_LIST.append(username)
+        print(USER_LIST)
 
     # Checks if there has been valid inputs.
     if username and room:
         # To make sure, that user names are not printed twice by html
         # and sockets, only return user list without the last entry.
         user_list_without_last_user = USER_LIST[:-1]
+        
+        # In case a user wants to use the spectator mode,
+        # render the spectator.html file instead of chat.html.
+        if username == "spectator":
+            return render_template('spectator.html', 
+                                   username=username, 
+                                   room=room,
+                                   user_list=user_list_without_last_user)
 
-        return render_template('chat.html', 
-                               username=username, 
-                               room=room,
-                               user_list=user_list_without_last_user)
+        else:
+            return render_template('chat.html', 
+                                   username=username, 
+                                   room=room,
+                                   user_list=user_list_without_last_user)
     
     # If not, redirect to home page and let user type in data again.
     else:
