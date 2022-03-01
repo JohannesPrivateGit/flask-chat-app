@@ -5,6 +5,10 @@ A simple chat app built with Flask and SocketIO.
 - [ ] Build working chat prototype
 - [ ] Build UI
 
+## 01.03. To-Do List
+- [ ] Build spectator mode
+- [ ] Build special person mode
+
 ## Setting Up the Project
 ### 1. Clone the Project
 Clone the project to a location on your device and make sure that Python 3 is installed.
