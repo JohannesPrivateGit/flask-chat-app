@@ -24,9 +24,15 @@
 
         <div id="all_users_profiles">
             {% for i in user_list %}
-            <div>
-                <img class="profile_picture" src="/static/profile.png" alt="">
-            </div>
+                {% if i == "admin" %}
+                <div>
+                    <img class="profile_picture" src="/static/admin.png" alt="">
+                </div>
+                {% else %}
+                <div>
+                    <img class="profile_picture" src="/static/profile.png" alt="">
+                </div>
+                {% endif %}
             {% endfor %}
         </div>
 
@@ -111,7 +117,13 @@
                 // Defines html code for element.
                 announcement.innerHTML = `<b>${data.username}</b> has joined the room`
                 new_user_name.innerHTML = `${data.username}`
-                new_user_profile.innerHTML = `<img class="profile_picture" src="/static/profile.png" alt="">`
+                
+                // Determines profile picture based on the username.
+                if (data.username == "admin") {
+                    new_user_profile.innerHTML = `<img class="profile_picture" src="/static/admin.png" alt="">`
+                } else {
+                    new_user_profile.innerHTML = `<img class="profile_picture" src="/static/profile.png" alt="">`
+                }
                 
                 // Appends new element to the div tag with the all_users ID.
                 document.getElementById('messages').appendChild(announcement);
