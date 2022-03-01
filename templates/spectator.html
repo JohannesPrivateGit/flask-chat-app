@@ -10,19 +10,13 @@
     </head>
 
     <body>
-        <h1>Group: {{ room }}</h1>
-
-        <div>Group members</div>
-
-        <div id="all_users">
+        <div id="all_users" class="group_members">
             {% for i in user_list %}
             <div>{{ i }}</div>
             {% endfor %}    
         </div>
 
-        <div>Group member profile pictures</div>
-
-        <div id="all_users_profiles">
+        <div id="all_users_profiles" class="group_members_profiles">
             {% for i in user_list %}
                 {% if i == "admin" %}
                 <div>
@@ -36,7 +30,7 @@
             {% endfor %}
         </div>
 
-        <div id="messages"></div>
+        <div id="messages" class="messages"></div>
     </body>
 
     <script src="https://cdn.socket.io/3.1.3/socket.io.min.js"></script>
@@ -52,10 +46,6 @@
                 username: "{{ username }}",
                 room: "{{ room }}"
             })
-
-            // ####################################################
-            // WHOLE MESSAGE INPUT IS NOT NEEDED FOR SPECTATOR MODE
-            // ####################################################
 
             // Handles user typing in a message in the html ínput field.
             //let message_input = document.getElementById('message_input');
@@ -82,15 +72,12 @@
             console.log(data);
 
             // Creates a div for name and for message.
-            const username_div = document.createElement('div')
             const message_div = document.createElement('div')
 
             // Defines inner HTML code of the divs.
-            username_div.innerHTML = `<b>${data.username}</b>`;
-            message_div.innerHTML = `${data.message}`;
+            message_div.innerHTML = `<div class="message"><div><b>${data.username}</b></div><div>${data.message}</div></div>`;
             
             // Appends them to the message div in the HTML document.
-            document.getElementById('messages').appendChild(username_div);
             document.getElementById('messages').appendChild(message_div);
         })
 
@@ -113,9 +100,10 @@
                 const new_user_profile = document.createElement('div')
                 
                 // Defines html code for element.
-                announcement.innerHTML = `<b>${data.username}</b> has joined the room`
+                announcement.innerHTML = `<div class="announcement"><b>${data.username}</b> has joined the room</div>`
+                
                 new_user_name.innerHTML = `${data.username}`
-
+                
                 // Determines profile picture based on the username.
                 if (data.username == "admin") {
                     new_user_profile.innerHTML = `<img class="profile_picture" src="/static/admin.png" alt="">`
@@ -126,7 +114,7 @@
                 // Appends new element to the div tag with the all_users ID.
                 document.getElementById('messages').appendChild(announcement);
                 document.getElementById('all_users').appendChild(new_user_name);
-                document.getElementById('all_users_profiles').appendChild(new_user_profile);
+                document.getElementById('all_users_profiles').appendChild(new_user_profile);    
             }
         })
     </script>

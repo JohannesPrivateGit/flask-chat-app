@@ -100,3 +100,43 @@ html {
     /* Size settings. */
     width: 50px;
 }
+
+.group_members {  
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 15%;
+    height: 100%;
+}
+
+.group_members_profiles {   
+    position: fixed;
+    top: 0%;
+    left: 15%;
+    width: 15%;
+    height: 100%;
+}
+
+.messages {    
+    position: absolute;
+    top: 0%;
+    left: 30%;
+    width: 70%;
+    height: 80%;
+}
+
+.message_input {
+    position: fixed;
+    top: 90%;
+    left: 30%;
+    width: 80%;
+    height: 20%;
+}
+
+.announcement {
+    background-color: black;
+}
+
+.message {
+    background-color: red;
+}
