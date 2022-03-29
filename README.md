@@ -1,7 +1,7 @@
 # Flask Chat App
 A simple chat app built with Flask and SocketIO.
 
-...
+. . .
 
 The code is from a software project for CHAMÄLEON Stralsund e.V.
 
