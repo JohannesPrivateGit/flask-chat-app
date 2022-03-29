@@ -12,6 +12,7 @@ Clone the project to a location on your device and make sure that Python 3 is in
 Run the following commands in your terminal:
 ```
 pip install flask
+pip install flask_socketio
 ```
 ### 3. Run the App
 To run the app, execute the following command in your terminal:
