@@ -1,6 +1,8 @@
 # Flask Chat App
 A simple chat app built with Flask and SocketIO.
 
+A software project for CHAMÄLEON Stralsund e.V.
+
 ## Project To-Do List
 - [x] Build working chat prototype
 - [ ] Build UI
