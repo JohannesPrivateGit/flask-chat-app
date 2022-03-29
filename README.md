@@ -2,7 +2,7 @@
 A simple chat app built with Flask and SocketIO.
 
 ## Project To-Do List
-- [ ] Build working chat prototype
+- [x] Build working chat prototype
 - [ ] Build UI
 
 ## Setting Up the Project

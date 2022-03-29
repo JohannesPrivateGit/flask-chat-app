@@ -32,6 +32,8 @@
 
         <div id="messages"></div>
 
+        <div id="role_description"></div>
+
         <form id="message_input_form">
             <label>
                 <input type="text" id="message_input" placeholder="Enter message here">
@@ -96,18 +98,14 @@
             if (data.username == "spectator") {
                 // Do nothing
             } else {
-                // Creates a new element for a div tag in the html document.
+                // Creates divs to add to html page.
                 const announcement = document.createElement('div')
-
-                // Displays all usernames on chat page.
                 const new_user_name = document.createElement('div')
-
-                // Displays a profile picture for every user.
                 const new_user_profile = document.createElement('div')
+                const new_user_description = document.createElement('div')
                 
                 // Defines html code for element.
                 announcement.innerHTML = `<div><b>${data.username}</b> has joined the room</div>`
-                
                 new_user_name.innerHTML = `${data.username}`
                 
                 // Determines profile picture based on the username.
@@ -116,11 +114,17 @@
                 } else {
                     new_user_profile.innerHTML = `<img src="/static/profile.png" alt="">`
                 }
+
+                // Determines if name has a role and add role description.
+                if (data.username == "admin") {
+                    new_user_description.innerHTML = `This is the Admin. The Admin controls everything.`
+                }
                 
                 // Appends new element to the div tag with the all_users ID.
                 document.getElementById('messages').appendChild(announcement);
                 document.getElementById('all_users').appendChild(new_user_name);
-                document.getElementById('all_users_profiles').appendChild(new_user_profile);    
+                document.getElementById('all_users_profiles').appendChild(new_user_profile);
+                document.getElementById('role_description').appendChild(new_user_description);
             }
         })
     </script>
