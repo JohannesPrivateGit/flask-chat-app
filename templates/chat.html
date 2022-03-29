@@ -127,5 +127,11 @@
                 document.getElementById('role_description').appendChild(new_user_description);
             }
         })
+
+        // Scrolls down the page automatically when new content builds up.
+        function pageScroll() {
+            window.scrollBy(0, 1);
+            scrolldelay = setTimeout(pageScroll, 10);
+        }
     </script>
 </html>
