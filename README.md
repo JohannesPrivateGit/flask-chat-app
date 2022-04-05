@@ -4,7 +4,7 @@ A simple chat app built with Flask and SocketIO.
 . . .
 
 This code is from a software project for CHAMÄLEON Stralsund e.V.
-Besides providing a reliable chat service for the company, it also serves as a kind of game including roles with respective profile pictures and 
+Besides providing a reliable chat service for the company, it also serves as a game including roles with respective profile pictures and 
 role descriptions. 
 The purpose of the game is to teach teenagers about the possible dangers of chatting with strangers on the internet.
 
