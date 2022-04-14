@@ -17,15 +17,17 @@
 
             <div class="member_list" id="member_list">
                 {% for i in user_list %}
-                <div class="member">
-                    {% if i == "admin" %}
-                    <img class="member_picture" src="/static/admin.png" alt="">
-                    {% else %}
-                    <img class="member_picture" src="/static/profile.png" alt="">
-                    {% endif %}
+                <div>
+                    <div class="member">
+                        {% if i == "admin" %}
+                        <img class="member_picture" src="/static/admin.png" alt="">
+                        {% else %}
+                        <img class="member_picture" src="/static/profile.png" alt="">
+                        {% endif %}
 
-                    <div class="member_name">
-                        <div>{{ i }}</div>
+                        <div class="member_name">
+                            <div>{{ i }}</div>
+                        </div>
                     </div>
                 </div>
                 {% endfor%}
@@ -120,9 +122,9 @@
                 
                 // Determines profile picture based on the username.
                 if (data.username == "admin") {
-                    new_user.innerHTML = `<div class="member"><img class="member_picture" src="/static/admin.png" alt=""><div class="member_name">${data.username}</div></div>`
+                    new_user.innerHTML = `<div class="member"><img class="member_picture" src="/static/admin.png" alt=""><div class="member_name"><div>${data.username}</div></div></div>`
                 } else {
-                    new_user.innerHTML = `<div class="member"><img class="member_picture" src="/static/profile.png" alt=""><div class="member_name">${data.username}</div></div>`
+                    new_user.innerHTML = `<div class="member"><img class="member_picture" src="/static/profile.png" alt=""><div class="member_name"><div>${data.username}</div></div></div>`
                 }
 
                 // Determines if name has a role and add role description.
