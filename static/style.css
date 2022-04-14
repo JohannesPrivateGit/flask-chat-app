@@ -141,3 +141,60 @@ html, body {
 
     background-color: rgba(223,49,98,0.5);
 }
+
+.login_box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+
+    border-style: solid;
+    border-width: 2px;
+    border-color: var(--font_on_widget);
+    border-radius: 10px;
+
+    width: 35%;
+    height: 35%;
+
+    text-align: center;
+
+    background-color: var(--widget_color);
+    color: var(--font_on_widget);
+}
+
+.login_field {
+    background-color: var(--background_color);
+
+    border-style: solid;
+    border-width: 2px;
+    border-color: var(--font_on_widget);
+    border-radius: 5px;
+
+    line-height: 30px;
+    margin-bottom: 3%;
+
+    font-size: 20px;
+
+    color: white;
+}
+
+.login_button {
+    background-color: var(--widget_color);
+
+    border-style: solid;
+    border-width: 2px;
+    border-color: var(--font_on_widget);
+    border-radius: 5px;
+
+    height: 35px;
+    width: 100px;
+
+    font-size: 20px;
+
+    color: var(--font_on_widget);
+}
+
+.login_button:hover {
+    background-color: var(--background_color);
+}
