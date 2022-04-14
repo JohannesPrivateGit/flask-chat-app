@@ -10,7 +10,7 @@ The purpose of the game is to teach teenagers about the possible dangers of chat
 
 ## Project To-Do List
 - [x] Build working chat prototype
-- [ ] Build UI
+- [x] Build UI
 
 ## Setting Up the Project
 ### 1. Clone the Project
