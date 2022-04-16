@@ -55,6 +55,10 @@
 
         let own_name = ""
 
+        // The amount of messages is later used for scrolling.
+        let message_counter = 0;
+        let scroll_counter = 0;
+
         // Socket connection code.
         socket.on('connect', function() {
             // When new user is connected, create a join_room message.
@@ -83,7 +87,6 @@
                 message_input.value = '';
                 message_input.focus();
             }
-
         })
 
         // Creates a new message if one is recieved.
@@ -101,6 +104,8 @@
 
             // Appends them to the message div in the HTML document.
             document.getElementById('messages').appendChild(message_div);
+
+            message_counter = message_counter + 1;
         })
 
         // Creates a join announcement.
@@ -137,19 +142,22 @@
                 document.getElementById('member_list').appendChild(new_user);
                 document.getElementById('role_description').appendChild(new_user_description);
             }
+
+            // Update the message counter.
+            message_counter = message_counter + 1;
         })
 
         // Scrolls down the page automatically when new content builds up.
         function scrolldown() {
-          setTimeout(
-            function()
-            {
-              window.scrollTo(0,document.body.scrollHeight);
-              scrolldown();
-            }, 1
-          )
+            setTimeout(function() {
+                if (message_counter != scroll_counter) {
+                    window.scrollTo(0, document.body.scrollHeight);  
+                    scroll_counter = scroll_counter + 1;   
+                }
+                scrolldown();
+            }, 1)
         }
 
-        scrolldown()
+        scrolldown();
     </script>
 </html>
