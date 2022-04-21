@@ -34,11 +34,18 @@
             </div>
 
             <div class="role_description" id="role_description">
+                {% if role == "admin" %}
+                <div>
+                    <b>Admin</b>
+                </div>
+                <div>This is the Admin. The Admin controls everything.</div>
+                {% endif %}
             </div>
-
             <form class="input_for_message" id="message_input_form">
                 <label>
+                    {% if spectator == False %}
                     <input class="message_input" type="text" id="message_input" placeholder="Enter message here...">
+                    {% endif %}
                 </label>
             </form>
         </div>
@@ -120,7 +127,6 @@
                 // Creates divs to add to html page.
                 const announcement = document.createElement('div')
                 const new_user = document.createElement('div')
-                const new_user_description = document.createElement('div')
                 
                 // Defines html code for element.
                 announcement.innerHTML = `<div class="join_announcement"><b>${data.username}</b> has joined the room</div>`
@@ -131,16 +137,10 @@
                 } else {
                     new_user.innerHTML = `<div class="member"><img class="member_picture" src="/static/profile.png" alt=""><div class="member_name"><div>${data.username}</div></div></div>`
                 }
-
-                // Determines if name has a role and add role description.
-                if (data.username == "admin") {
-                    new_user_description.innerHTML = `<div><b>${data.username}</b></div><div>This is the Admin. The Admin controls everything.</div>`
-                }
                 
                 // Appends new element to the div tag with the all_users ID.
                 document.getElementById('messages').appendChild(announcement);
                 document.getElementById('member_list').appendChild(new_user);
-                document.getElementById('role_description').appendChild(new_user_description);
             }
 
             // Update the message counter.

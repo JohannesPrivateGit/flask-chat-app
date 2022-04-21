@@ -43,16 +43,28 @@ def chat():
         # In case a user wants to use the spectator mode,
         # render the spectator.html file instead of chat.html.
         if username == "spectator":
-            return render_template('spectator.html', 
+            return render_template('chat.html', 
                                    username=username, 
                                    room=room,
-                                   user_list=user_list_without_last_user)
+                                   user_list=user_list_without_last_user,
+                                   spectator=True,
+                                   role=None)
+
+        elif username == "admin":
+            return render_template('chat.html', 
+                                   username=username, 
+                                   room=room,
+                                   user_list=user_list_without_last_user,
+                                   spectator=False,
+                                   role="admin")
 
         else:
             return render_template('chat.html', 
                                    username=username, 
                                    room=room,
-                                   user_list=user_list_without_last_user)
+                                   user_list=user_list_without_last_user,
+                                   spectator=False,
+                                   role=None)
     
     # If not, redirect to home page and let user type in data again.
     else:
