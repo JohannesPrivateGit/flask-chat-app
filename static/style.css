@@ -37,6 +37,7 @@ html, body {
 
 .member_list {
     height: 60%;
+    overflow-y: scroll;
 }
 
 .member {
@@ -65,9 +66,19 @@ html, body {
 
 .role_description {
     position: absolute;
-    width: 100%;
-    height: 20%;
+    width: 95%;
+    height: 18%;
     bottom: 10%;
+
+    border-style: solid;
+    border-width: 2px;
+    border-color: var(--font_on_widget);
+    border-radius: 10px;
+
+    margin-top: 1%;
+    margin-bottom: 1%;
+
+    padding: 1%
 }
 
 .input_for_message {
@@ -128,6 +139,10 @@ html, body {
     hyphens: auto;
 }
 
+.own_message:hover {
+    background-color: rgba(255, 165, 0, 0.5);
+}
+
 .other_message {
     width: 60%;
     margin-left: 3%;
@@ -148,6 +163,10 @@ html, body {
     -moz-hyphens: auto;
     -webkit-hyphens: auto;
     hyphens: auto;
+}
+
+.other_message:hover {
+    background-color: rgba(255, 165, 0, 0.5);
 }
 
 .join_announcement {
