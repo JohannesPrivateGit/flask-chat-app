@@ -33,6 +33,7 @@
                 {% endfor%}
             </div>
 
+            {% if role == "admin" %}
             <div class="role_description" id="role_description">
                 {% if role == "admin" %}
                 <div>
@@ -41,6 +42,8 @@
                 <div>This is the Admin. The Admin controls everything.</div>
                 {% endif %}
             </div>
+            {% endif %}
+            
             <form class="input_for_message" id="message_input_form">
                 <label>
                     {% if spectator == False %}
