@@ -122,6 +122,9 @@ html, body {
     color: var(--font_color);
 
     overflow-y: scroll;
+
+    background-image: url("/static/logo.png");
+    background-size: 100%;
 }
 
 .own_message {
