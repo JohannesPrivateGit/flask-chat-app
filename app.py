@@ -39,23 +39,12 @@ def chat():
         # To make sure, that user names are not printed twice by html
         # and sockets, only return user list without the last entry.
         user_list_without_last_user = USER_LIST[:-1]
-        
-        # In case a user wants to use the spectator mode,
-        # render the spectator.html file instead of chat.html.
-        if username == "spectator":
-            return render_template('chat.html', 
-                                   username=username, 
-                                   room=room,
-                                   user_list=user_list_without_last_user,
-                                   spectator=True,
-                                   role=None)
 
-        elif username == "admin":
+        if username == "admin":
             return render_template('chat.html', 
                                    username=username, 
                                    room=room,
                                    user_list=user_list_without_last_user,
-                                   spectator=False,
                                    role="admin")
 
         else:
@@ -63,7 +52,6 @@ def chat():
                                    username=username, 
                                    room=room,
                                    user_list=user_list_without_last_user,
-                                   spectator=False,
                                    role=None)
     
     # If not, redirect to home page and let user type in data again.

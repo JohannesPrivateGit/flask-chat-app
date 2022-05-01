@@ -50,9 +50,7 @@
 
         <form class="input_for_message" id="message_input_form">
             <label>
-                {% if spectator == False %}
                 <input class="message_input" type="text" id="message_input" placeholder="Enter message here...">
-                {% endif %}
             </label>
         </form>
     </body>
@@ -100,22 +98,24 @@
         })
 
         // Creates a new message if one is recieved.
-        socket.on('receive_message', function (data) {
+        socket.on('receive_message', function(data) {
             console.log(data);
 
-            // Creates a div for name and for message.
-            const message_div = document.createElement('div')
+            if (data.username != 'spectator') {
+                // Creates a div for name and for message.
+                const message_div = document.createElement('div')
 
-            if (data.username == own_name) {
-                message_div.innerHTML = `<div class="own_message"><div><b>${data.username}</b></div><div>${data.message}</div></div>`;
-            } else {
-                message_div.innerHTML = `<div class="other_message"><div><b>${data.username}</b></div><div>${data.message}</div></div>`;
+                if (data.username == own_name) {
+                    message_div.innerHTML = `<div class="own_message"><div><b>${data.username}</b></div><div>${data.message}</div></div>`;
+                } else {
+                    message_div.innerHTML = `<div class="other_message"><div><b>${data.username}</b></div><div>${data.message}</div></div>`;
+                }
+
+                // Appends them to the message div in the HTML document.
+                document.getElementById('messages').appendChild(message_div);
+
+                message_counter = message_counter + 1;
             }
-
-            // Appends them to the message div in the HTML document.
-            document.getElementById('messages').appendChild(message_div);
-
-            message_counter = message_counter + 1;
         })
 
         // Creates a join announcement.
