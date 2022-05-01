@@ -2,8 +2,8 @@ html, body {
     font-family: 'Open Sans';
     font-size: 20px;
 
-    height: 100%;
-    width: 99.5%;
+    height: 100.5%;
+    width: 100.5%;
 
     --chameleon_gr: #a7ff0b;
     --chameleon_bl: #2597b2;
@@ -16,6 +16,9 @@ html, body {
     --font_color: white;
 
     background-color: var(--background_color);
+
+    position: fixed; 
+    overflow-y: scroll;
 }
 
 .widget {
@@ -66,12 +69,12 @@ html, body {
 
 .role_description {
     position: absolute;
-    width: 95%;
-    height: 18%;
-    bottom: 10%;
+    width: 94%;
+    height: 26%;
+    bottom: 1%;
 
     border-style: solid;
-    border-width: 2px;
+    border-width: 5px;
     border-color: var(--font_on_widget);
     border-radius: 10px;
 
@@ -83,9 +86,11 @@ html, body {
 
 .input_for_message {
     position: absolute;
-    width: 100%;
+    margin-left: 34%;
+
+    width: 67%;
     height: 8%;
-    bottom: 2%;
+    top: 90%;
 }
 
 .message_input {
@@ -112,9 +117,11 @@ html, body {
 
     float: left;
     width: 67%;
-    height: 100%;
+    height: 90%;
 
     color: var(--font_color);
+
+    overflow-y: scroll;
 }
 
 .own_message {
@@ -182,6 +189,11 @@ html, body {
     background-color: rgba(223,49,98,0.5);
 }
 
+.headline {
+    font-size: 30px;
+    padding-bottom: 1%;
+}
+
 .login_box {
     position: absolute;
     top: 50%;
@@ -195,7 +207,7 @@ html, body {
     border-radius: 10px;
 
     width: 35%;
-    height: 35%;
+    height: 30%;
 
     text-align: center;
 

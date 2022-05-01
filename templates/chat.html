@@ -43,18 +43,18 @@
                 {% endif %}
             </div>
             {% endif %}
-            
-            <form class="input_for_message" id="message_input_form">
-                <label>
-                    {% if spectator == False %}
-                    <input class="message_input" type="text" id="message_input" placeholder="Enter message here...">
-                    {% endif %}
-                </label>
-            </form>
         </div>
 
         <div class="messages" id="messages">
         </div>
+
+        <form class="input_for_message" id="message_input_form">
+            <label>
+                {% if spectator == False %}
+                <input class="message_input" type="text" id="message_input" placeholder="Enter message here...">
+                {% endif %}
+            </label>
+        </form>
     </body>
 
     <script src="https://cdn.socket.io/3.1.3/socket.io.min.js"></script>
@@ -150,17 +150,18 @@
             message_counter = message_counter + 1;
         })
 
-        // Scrolls down the page automatically when new content builds up.
-        function scrolldown() {
+        // Scrolls down the message div automatically when new content builds up.
+        function check_for_scrolling() {
             setTimeout(function() {
                 if (message_counter != scroll_counter) {
-                    window.scrollTo(0, document.body.scrollHeight);  
-                    scroll_counter = scroll_counter + 1;   
+                    var msg_div = document.getElementById("messages");
+                    msg_div.scrollTop = msg_div.scrollHeight;
+                    scroll_counter = scroll_counter + 1;
                 }
-                scrolldown();
+                check_for_scrolling();
             }, 1)
         }
 
-        scrolldown();
+        check_for_scrolling();
     </script>
 </html>
