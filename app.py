@@ -40,19 +40,11 @@ def chat():
         # and sockets, only return user list without the last entry.
         user_list_without_last_user = USER_LIST[:-1]
 
-        if username == "admin":
-            return render_template('chat.html', 
-                                   username=username, 
-                                   room=room,
-                                   user_list=user_list_without_last_user,
-                                   role="admin")
-
-        else:
-            return render_template('chat.html', 
-                                   username=username, 
-                                   room=room,
-                                   user_list=user_list_without_last_user,
-                                   role=None)
+        return render_template('chat.html',
+                               username=username,
+                               room=room,
+                               user_list=user_list_without_last_user,
+                               role=str.lower(username))
     
     # If not, redirect to home page and let user type in data again.
     else:
