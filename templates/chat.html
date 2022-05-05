@@ -19,8 +19,26 @@
                 {% for i in user_list %}
                 <div>
                     <div class="member">
-                        {% if i == "admin" %}
+                        {% if i.lower() == "admin" %}
                         <img class="member_picture" src="/static/admin.png" alt="">
+
+                        {% elif i.lower() == "küken" %}
+                        <img class="member_picture" src="/static/kueken.png" alt="">
+                        {% elif i.lower() == "einhorn" %}
+                        <img class="member_picture" src="/static/einhorn.png" alt="">
+                        {% elif i.lower() == "faultier" %}
+                        <img class="member_picture" src="/static/faultier.png" alt="">
+                        {% elif i.lower() == "känguru" %}
+                        <img class="member_picture" src="/static/kaenguru.png" alt="">
+                        {% elif i.lower() == "krokodil" %}
+                        <img class="member_picture" src="/static/krokodil.png" alt="">
+                        {% elif i.lower() == "schaf" %}
+                        <img class="member_picture" src="/static/schaf.png" alt="">
+                        {% elif i.lower() == "wiesel" %}
+                        <img class="member_picture" src="/static/wiesel.png" alt="">
+                        {% elif i.lower() == "zebra" %}
+                        <img class="member_picture" src="/static/zebra.png" alt="">
+                        
                         {% else %}
                         <img class="member_picture" src="/static/profile.png" alt="">
                         {% endif %}
@@ -235,10 +253,36 @@
                 announcement.innerHTML = `<div class="join_announcement"><b>${data.username}</b> has joined the room</div>`
                 
                 // Determines profile picture based on the username.
-                if (data.username == "admin") {
+                if (data.username.toLowerCase() == "admin") {
                     new_user.innerHTML = `<div class="member"><img class="member_picture" src="/static/admin.png" alt=""><div class="member_name"><div>${data.username}</div></div></div>`
                 } else {
                     new_user.innerHTML = `<div class="member"><img class="member_picture" src="/static/profile.png" alt=""><div class="member_name"><div>${data.username}</div></div></div>`
+                }
+
+                // Add role profile pictures
+                if (data.username.toLowerCase() == "küken") {
+                    new_user.innerHTML = `<div class="member"><img class="member_picture" src="/static/kueken.png" alt=""><div class="member_name"><div>${data.username}</div></div></div>`
+                }
+                if (data.username.toLowerCase() == "einhorn") {
+                    new_user.innerHTML = `<div class="member"><img class="member_picture" src="/static/einhorn.png" alt=""><div class="member_name"><div>${data.username}</div></div></div>`
+                }
+                if (data.username.toLowerCase() == "faultier") {
+                    new_user.innerHTML = `<div class="member"><img class="member_picture" src="/static/faultier.png" alt=""><div class="member_name"><div>${data.username}</div></div></div>`
+                }
+                if (data.username.toLowerCase() == "känguru") {
+                    new_user.innerHTML = `<div class="member"><img class="member_picture" src="/static/kaenguru.png" alt=""><div class="member_name"><div>${data.username}</div></div></div>`
+                }
+                if (data.username.toLowerCase() == "krokodil") {
+                    new_user.innerHTML = `<div class="member"><img class="member_picture" src="/static/krokodil.png" alt=""><div class="member_name"><div>${data.username}</div></div></div>`
+                }
+                if (data.username.toLowerCase() == "schaf") {
+                    new_user.innerHTML = `<div class="member"><img class="member_picture" src="/static/schaf.png" alt=""><div class="member_name"><div>${data.username}</div></div></div>`
+                }
+                if (data.username.toLowerCase() == "wiesel") {
+                    new_user.innerHTML = `<div class="member"><img class="member_picture" src="/static/wiesel.png" alt=""><div class="member_name"><div>${data.username}</div></div></div>`
+                }
+                if (data.username.toLowerCase() == "zebra") {
+                    new_user.innerHTML = `<div class="member"><img class="member_picture" src="/static/zebra.png" alt=""><div class="member_name"><div>${data.username}</div></div></div>`
                 }
                 
                 // Appends new element to the div tag with the all_users ID.
