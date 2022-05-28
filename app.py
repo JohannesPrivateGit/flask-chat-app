@@ -3,6 +3,8 @@
 from flask import Flask, render_template, request, redirect, url_for, flash
 from flask_socketio import SocketIO, join_room
 
+APP_PASSWORD = "1223"
+
 
 # Initializing Flask.
 app = Flask(__name__)
@@ -25,6 +27,11 @@ def chat():
     # Gets username and chatroom from previous webpage.
     username = request.args.get('username')
     room = request.args.get('room')
+    password = request.args.get('password')
+
+    # Check if user entered thee right password.
+    if password != APP_PASSWORD:
+        return redirect(url_for('home'))
 
     # Only add new user to the list if it is not a spectator.
     if username == "spectator":
