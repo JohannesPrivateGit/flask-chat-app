@@ -8,12 +8,6 @@ Besides providing a reliable chat service for the company, it also serves as a g
 role descriptions. 
 The purpose of the game is to teach teenagers about the possible dangers of chatting with strangers on the internet.
 
-## Project To-Do List
-- [x] Build working chat prototype
-- [x] Build UI
-- [ ] Implement anonymous role
-- [ ] Include better profile pictures
-
 ## Setting Up the Project
 ### 1. Clone the Project
 Clone the project to a location on your device and make sure that Python 3 is installed.
@@ -32,3 +26,9 @@ Then go into your browser and type in the following URL:
 ```
 http://127.0.0.1:5000/
 ```
+### 4. Choose a save App Password
+Open app.py and go to line 6. It should look like this:
+```
+APP_PASSWORD = "1223"
+```
+Enter your personal password into the quotation marks.
