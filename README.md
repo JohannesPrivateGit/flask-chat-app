@@ -17,7 +17,13 @@ Run the following commands in your terminal:
 pip install flask
 pip install flask_socketio
 ```
-### 3. Run the App
+### 3. Choose a save App Password
+Open app.py and go to line 6. It should look like this:
+```
+APP_PASSWORD = "1223"
+```
+Enter your personal password into the quotation marks.
+### 4. Run the App
 To run the app, execute the following command in your terminal:
 ```
 flask run
@@ -26,9 +32,3 @@ Then go into your browser and type in the following URL:
 ```
 http://127.0.0.1:5000/
 ```
-### 4. Choose a save App Password
-Open app.py and go to line 6. It should look like this:
-```
-APP_PASSWORD = "1223"
-```
-Enter your personal password into the quotation marks.
